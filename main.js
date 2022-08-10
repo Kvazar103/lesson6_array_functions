@@ -56,14 +56,16 @@ console.log("- створити функцію sortNums(direction), яка пр�
     "//     або навпаки в залежності від значення аргументу direction.")
 let numbers=[11,21,3];
 
-function sortNumsAscending(nums){
-   return  nums.sort((a,b)=>a-b)
+function sortNums(nums,direction){
+    if (direction=='ascending') {
+        return nums.sort((a, b) => a - b)
+    }else if(direction=='descending'){
+        return nums.sort((a,b)=>b-a)
+    }
 }
-function sortNumsDescending(nums){
-    return nums.sort((a,b)=>b-a)
-}
-console.log(sortNumsAscending(numbers));
-console.log(sortNumsDescending(numbers));
+
+console.log(sortNums(numbers,'ascending'));
+console.log(sortNums(numbers,'descending'));
 
 // - є масив
 // let coursesAndDurationArray = [
@@ -120,22 +122,22 @@ let cards=[
 ]
 console.log("знайти піковий туз ")
 let spade_cards=cards.filter(function (el){
-    return el.cardSuit=='spade'
+    return el.cardSuit==='spade'
 })
 console.log(spade_cards)
 console.log("всі шістки")
 let cards_with6=cards.filter(function (el){
-    return el.value==6;
+    return el.value===6;
 })
 console.log(cards_with6);
 console.log("всі червоні карти")
 let cards_red=cards.filter(function (el){
-    return el.color=='red';
+    return el.color==='red';
 })
 console.log(cards_red);
 console.log("всі буби")
 let cards_with_diamond=cards.filter(function (el){
-    return el.cardSuit=='diamond';
+    return el.cardSuit==='diamond';
 })
 console.log(cards_with_diamond);
 console.log("всі трефи від 9 та більше")
