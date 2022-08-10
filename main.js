@@ -146,6 +146,34 @@ let card_from_9=cards.filter(function (el){
 })
 console.log(card_from_9);
 
+// Додатково по reduce
+// Взяти описану колоду карт, та за допомоги редюсу попакувати всі карти по "мастях" в об'єкт
+console.log("Додатково по reduce\n" +
+    "Взяти описану колоду карт, та за допомоги редюсу попакувати всі карти по \"мастях\" в об'єкт")
+let reduce=cards.reduce(function (accumulator,card){
+    if(card.cardSuit==='spade'){
+        accumulator.spades.push(card)
+    }
+    if(card.cardSuit==='diamond'){
+        accumulator.diamonds.push(card)
+    }
+    if(card.cardSuit==='heart'){
+        accumulator.hearts.push(card)
+    }
+    if(card.cardSuit==='clubs'){
+        accumulator.clubs.push(card)
+    }
+    return accumulator
+},{spades:[], diamonds:[], hearts:[], clubs:[]})
+console.log(reduce)
+// {
+//     spades:[],
+//         diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+
+
 
 
 
